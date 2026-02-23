@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -16,9 +16,8 @@ spec:
       - name: frontend
         image: shield-project-web
         imagePullPolicy: IfNotPresent
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        env:
+          - name: BACKEND_API_URL
+            value: "http://backend:5001/fetch_price" # Points to the 'backend' Service
         ports:
-        - containerPort: 5002
+          - containerPort: 5002

@@ -16,9 +16,10 @@ spec:
       - name: backend
         image: shield-project-backend-service
         imagePullPolicy: IfNotPresent
+        # The env, resources, and ports must all be aligned under the container
         env:
         - name: MYSQL_HOST
-          value: "mysqldb"
+          value: "mysql"  # Matches your ClusterIP Service metadata.name
         - name: MYSQL_USER
           value: "root"
         - name: MYSQL_PASSWORD

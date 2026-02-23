@@ -1,7 +1,8 @@
+# beServices.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend
+  name: backend-service  # Changed from 'backend' to 'backend-service'
 spec:
   type: ClusterIP
   selector:
