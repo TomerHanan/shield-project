@@ -13,9 +13,8 @@ spec:
         app: mysql
     spec:
       containers:
-      - name: mysql
-        image: mysql:latest
-        imagePullPolicy: IfNotPresent
+      - name: mysqldb
+        image: mysql:5.7
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "123456"

@@ -18,7 +18,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_HOST
-          value: "mysql"
+          value: "mysqldb"
         - name: MYSQL_USER
           value: "root"
         - name: MYSQL_PASSWORD
