@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: backend
-        image: backendDeployment:latest
+        image: shield-project-backend-service
+        imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_HOST
           value: "mysql"

@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: FrontendDeployment:latest
+        image: shield-project-web
+        imagePullPolicy: IfNotPresent
         resources:
           limits:
             memory: "128Mi"
