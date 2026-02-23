@@ -21,6 +21,10 @@ services:
       - shieldnet
     depends_on:
       - mysqldb
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123456
 
   mysqldb:
     image: mysql:5.7
