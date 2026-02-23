@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: frontend
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: myapp
+      app: frontend
   template:
     metadata:
       labels:
-        app: myapp
+        app: frontend
     spec:
       containers:
-      - name: myapp
-        image: <Image>
+      - name: frontend
+        image: FrontendDeployment:latest
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: <Port>
+        - containerPort: 5002
